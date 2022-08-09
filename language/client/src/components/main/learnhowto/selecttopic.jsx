@@ -2,12 +2,17 @@ import React from 'react';
 import styled from 'styled-components';
 
 function SelectTopic({ setTopic }) {
+  const topics = ['Say I am Batman', 'Write an if statement', 'Create a for loop', 'Write a function'];
+
+  let key = 0;
+  const options = topics.map((topic) => {
+    key += 1;
+    return <option key={key}>{topic}</option>;
+  });
+
   return (
     <SelectTopicComponent onChange={(event) => setTopic(event.target.value)}>
-      <option>Say I am Batman</option>
-      <option>Create a for loop</option>
-      <option>Write an if statement</option>
-      <option>Write a function</option>
+      {options}
     </SelectTopicComponent>
   );
 }
