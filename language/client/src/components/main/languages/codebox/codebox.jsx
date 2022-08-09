@@ -6,6 +6,7 @@ import code from './code';
 
 function CodeBox({ selectedLanguage, topic }) {
   const textContent = code[topic][selectedLanguage] || '';
+  console.log('text content is', textContent);
   return (
     <CodeBoxComponent>
       <ExampleCode selectedLanguage={selectedLanguage} textContent={textContent} />

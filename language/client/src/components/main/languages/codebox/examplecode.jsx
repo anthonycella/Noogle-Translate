@@ -24,6 +24,7 @@ function ExampleCode({ textContent, selectedLanguage }) {
 }
 
 const ExampleCodeComponent = styled.div`
+  whiteSpace: nowrap;
   min-height: 600px;
   width: 650px;
   padding: 25px;
