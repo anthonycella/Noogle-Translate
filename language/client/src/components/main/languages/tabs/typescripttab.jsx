@@ -22,7 +22,7 @@ const TypescriptTabComponent = styled.div`
   width: 100px;
   background-color: ${(props) => props.background};
   border: 3px solid #4885ed;
-  border-radius: 5px;
+  border-radius: 5px 5px 0px 0px;
 `;
 
 export default TypescriptTab;
