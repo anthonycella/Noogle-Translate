@@ -1,0 +1,35 @@
+import React from 'react';
+import styled from 'styled-components';
+
+function getColorFromSelectedLanguage(selectedLanguage) {
+  switch (selectedLanguage) {
+    case 'python':
+      return '#3cba54';
+    case 'java':
+      return '#db3236';
+    case 'typescript':
+      return '#4885ed';
+    default:
+      return 'white';
+  }
+}
+
+function ExampleCode({ textContent, selectedLanguage }) {
+  const color = getColorFromSelectedLanguage(selectedLanguage);
+  return (
+    <ExampleCodeComponent color={color}>
+      {'print("I am Batman")'}
+    </ExampleCodeComponent>
+  );
+}
+
+const ExampleCodeComponent = styled.div`
+  min-height: 600px;
+  width: 650px;
+  padding: 25px;
+  color: ${(props) => props.color};
+  font-size: 18px;
+  background-color: #000;
+`;
+
+export default ExampleCode;
