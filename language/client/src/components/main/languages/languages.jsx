@@ -12,7 +12,7 @@ function Languages({ topic, languages }) {
       <Tabs
         selectedLanguage={selectedLanguage}
         setSelectedLanguage={setSelectedLanguage}
-        language={languages}
+        languages={languages}
       />
       <CodeBox selectedLanguage={selectedLanguage} topic={topic} />
     </LanguagesComponent>

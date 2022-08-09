@@ -10,6 +10,7 @@ function Main() {
   // console.log('topic is', topic);
   const topics = ['Say I am Batman', 'Write an if statement', 'Create a for loop', 'Write a function'];
   const languages = Object.keys(Code[topic]);
+  // console.log("🚀 ~ file: Main.jsx ~ line 13 ~ Main ~ languages", languages);
 
   return (
     <MainComponent>

@@ -1,9 +1,10 @@
 const code = {
   'Say I am Batman': {
-    '': 'Select a language to begin',
     python: 'print("I am Batman")',
     java: 'System.out.println("I am Batman");',
     typescript: 'console.log("I am Batman")',
+    'c++': 'cout << "I am Batman";',
+    go: 'fmt.Println("I am Batman")',
   },
 
   'Create a for loop': {

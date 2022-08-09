@@ -9,6 +9,10 @@ function getColorFromSelectedLanguage(selectedLanguage) {
       return '#db3236';
     case 'typescript':
       return '#4885ed';
+    case 'go':
+      return '#B051CA';
+    case 'c++':
+      return '#f4c20d';
     default:
       return 'white';
   }
