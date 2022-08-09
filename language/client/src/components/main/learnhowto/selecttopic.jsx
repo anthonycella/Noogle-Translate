@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
-function SelectTopic() {
+function SelectTopic({ setTopic }) {
   return (
-    <SelectTopicComponent>
+    <SelectTopicComponent onChange={(event) => setTopic(event.target.value)}>
       <option>
         Say
         &nbsp;
