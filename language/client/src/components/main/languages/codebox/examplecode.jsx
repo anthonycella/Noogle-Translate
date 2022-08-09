@@ -29,7 +29,7 @@ const ExampleCodeComponent = styled.div`
   padding: 25px;
   color: ${(props) => props.color};
   font-size: 18px;
-  background-color: #000;
+  background-color: #333;
 `;
 
 export default ExampleCode;
