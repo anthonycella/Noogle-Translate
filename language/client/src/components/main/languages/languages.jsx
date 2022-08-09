@@ -5,7 +5,7 @@ import Tabs from './tabs/tabs';
 import CodeBox from './codebox/codebox';
 
 function Languages({ topic }) {
-  const [selectedLanguage, setSelectedLanguage] = useState('python');
+  const [selectedLanguage, setSelectedLanguage] = useState('');
 
   return (
     <LanguagesComponent>

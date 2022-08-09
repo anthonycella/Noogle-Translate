@@ -1,4 +1,8 @@
 const code = {
+  '': {
+
+  },
+
   'Say I am Batman': {
     python: 'print("I am Batman")',
     java: 'System.out.println("I am Batman");',
