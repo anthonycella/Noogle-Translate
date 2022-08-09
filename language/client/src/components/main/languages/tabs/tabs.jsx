@@ -5,12 +5,21 @@ import PythonTab from './pythontab';
 import JavaTab from './javatab';
 import TypescriptTab from './typescripttab';
 
-function Tabs() {
+function Tabs({ selectedLanguage, setSelectedLanguage }) {
   return (
     <TabsComponent>
-      <PythonTab />
-      <JavaTab />
-      <TypescriptTab />
+      <PythonTab
+        selectedLanguage={selectedLanguage}
+        setLanguageToPython={() => setSelectedLanguage('python')}
+      />
+      <JavaTab
+        selectedLanguage={selectedLanguage}
+        setLanguageToJava={() => setSelectedLanguage('java')}
+      />
+      <TypescriptTab
+        selectedLanguage={selectedLanguage}
+        setLanguageToTypescript={() => setSelectedLanguage('typescript')}
+      />
     </TabsComponent>
   );
 }

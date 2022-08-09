@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 import Tabs from './tabs/tabs';
 
 function Languages() {
+  const [selectedLanguage, setSelectedLanguage] = useState('python');
+
   return (
     <LanguagesComponent>
-      <Tabs />
+      <Tabs selectedLanguage={selectedLanguage} setSelectedLanguage={setSelectedLanguage} />
     </LanguagesComponent>
   );
 }
