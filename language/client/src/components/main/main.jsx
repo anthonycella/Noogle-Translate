@@ -17,6 +17,6 @@ const MainComponent = styled.div`
   margin-top: 5px;
   height: 1000px;
   width: 750px;
-`;
+git `;
 
 export default Main;
