@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Languages from './languages';
+import Languages from './languages/languages';
 import LearnHowTo from './learnhowto/learnhowto';
 
 function Main() {
