@@ -4,9 +4,9 @@ import styled from 'styled-components';
 function LearnHowTo() {
   return (
     <LearnHowToComponent>
-      Learn how to say
+      Learn how to
       &nbsp;
-      <q>I am Batman</q>
+
       &nbsp;
       in...
     </LearnHowToComponent>
