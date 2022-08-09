@@ -4,11 +4,7 @@ import styled from 'styled-components';
 function SelectTopic({ setTopic }) {
   return (
     <SelectTopicComponent onChange={(event) => setTopic(event.target.value)}>
-      <option>
-        Say
-        &nbsp;
-        <q>I am Batman</q>
-      </option>
+      <option>Say I am Batman</option>
       <option>Create a for loop</option>
       <option>Write an if statement</option>
       <option>Write a function</option>
