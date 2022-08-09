@@ -18,7 +18,7 @@ function ExampleCode({ textContent, selectedLanguage }) {
   const color = getColorFromSelectedLanguage(selectedLanguage);
   return (
     <ExampleCodeComponent color={color}>
-      {'print("I am Batman")'}
+      {textContent}
     </ExampleCodeComponent>
   );
 }

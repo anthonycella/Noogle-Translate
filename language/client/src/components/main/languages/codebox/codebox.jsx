@@ -2,11 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 
 import ExampleCode from './examplecode';
+import code from './code';
 
-function CodeBox({ selectedLanguage }) {
+function CodeBox({ selectedLanguage, topic }) {
+  const textContent = code[topic][selectedLanguage] || '';
   return (
     <CodeBoxComponent>
-      <ExampleCode selectedLanguage={selectedLanguage} />
+      <ExampleCode selectedLanguage={selectedLanguage} textContent={textContent} />
     </CodeBoxComponent>
   );
 }
