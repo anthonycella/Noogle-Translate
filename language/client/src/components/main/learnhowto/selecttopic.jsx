@@ -1,9 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-function SelectTopic({ setTopic }) {
-  const topics = ['Say I am Batman', 'Write an if statement', 'Create a for loop', 'Write a function'];
-
+function SelectTopic({ setTopic, topics }) {
   let key = 0;
   const options = topics.map((topic) => {
     key += 1;

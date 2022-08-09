@@ -4,12 +4,16 @@ import styled from 'styled-components';
 import Tabs from './tabs/tabs';
 import CodeBox from './codebox/codebox';
 
-function Languages({ topic }) {
+function Languages({ topic, languages }) {
   const [selectedLanguage, setSelectedLanguage] = useState('');
 
   return (
     <LanguagesComponent>
-      <Tabs selectedLanguage={selectedLanguage} setSelectedLanguage={setSelectedLanguage} />
+      <Tabs
+        selectedLanguage={selectedLanguage}
+        setSelectedLanguage={setSelectedLanguage}
+        language={languages}
+      />
       <CodeBox selectedLanguage={selectedLanguage} topic={topic} />
     </LanguagesComponent>
   );

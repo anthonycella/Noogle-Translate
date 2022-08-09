@@ -3,12 +3,12 @@ import styled from 'styled-components';
 
 import SelectTopic from './selecttopic';
 
-function LearnHowTo({ setTopic }) {
+function LearnHowTo({ setTopic, topics }) {
   return (
     <LearnHowToComponent>
       Learn how to
       &nbsp;
-      <SelectTopic setTopic={setTopic} />
+      <SelectTopic setTopic={setTopic} topics={topics} />
       &nbsp;
       in...
     </LearnHowToComponent>
