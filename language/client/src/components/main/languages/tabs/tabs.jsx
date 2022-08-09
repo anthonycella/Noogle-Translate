@@ -20,7 +20,6 @@ const TabsComponent = styled.div`
   flex-direction: row;
   height: 50px;
   width: 750px;
-  border: 1px solid blue;
 `;
 
 export default Tabs;
