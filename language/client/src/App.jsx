@@ -1,9 +1,10 @@
 import React from 'react';
+import Title from './components/title/title';
 
 function App() {
   return (
     <div className="App">
-      I am batman
+      <Title />
     </div>
   );
 }
