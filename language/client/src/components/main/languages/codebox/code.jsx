@@ -1,9 +1,6 @@
 const code = {
-  '': {
-
-  },
-
   'Say I am Batman': {
+    '': 'Select a language to begin',
     python: 'print("I am Batman")',
     java: 'System.out.println("I am Batman");',
     typescript: 'console.log("I am Batman")',
@@ -27,5 +24,26 @@ const code = {
     typescript: 'function functionName(arg1, arg2, etc) {\n  execute statement\n  execute statement\n  execute statement\n}',
   },
 };
+
+// python: {
+//   'Say I am Batman': 'print("I am Batman")',
+//   'Create a for loop': 'for i in range(start inclusive, end exclusive):\n  execute statement\n  execute statement',
+//   'Write an if statement': 'if condition:\n  execute statement',
+//   'Write a function': 'def function_name(arg1, arg2, etc):\n  execute statement\n  execute statement\n  execute statement',
+// },
+
+// java: {
+//   'Say I am Batman': 'System.out.println("I am Batman");',
+//   'Create a for loop': 'for (int i = start; i < end; i++) {\n  execute statement\n  execute statement\n}',
+//   'Write an if statement': 'if (condition) {\n  execute statement\n}',
+//   'Write a function': 'public static dataType functionName(dataType arg1, dataType arg2, dataType etc) {\n  execute statement\n  execute statement\n  execute statement\n}',
+// },
+
+// typescript: {
+//   'Say I am Batman': 'console.log("I am Batman")',
+//   'Create a for loop': 'for (int i = start; i < end; i++) {\n  execute statement\n  execute statement\n}',
+//   'Write an if statement': 'if (condition) {\n  execute statement\n}',
+//   'Write a function': 'function functionName(arg1, arg2, etc) {\n  execute statement\n  execute statement\n  execute statement\n}',
+// },
 
 export default code;

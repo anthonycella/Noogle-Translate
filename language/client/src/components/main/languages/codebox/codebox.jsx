@@ -5,7 +5,7 @@ import ExampleCode from './examplecode';
 import code from './code';
 
 function CodeBox({ selectedLanguage, topic }) {
-  const textContent = selectedLanguage === '' ? 'Select a language to begin' : code[topic][selectedLanguage] || '';
+  const textContent = code[topic][selectedLanguage];
   // console.log('text content is', textContent);
   return (
     <CodeBoxComponent>
