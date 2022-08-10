@@ -17,6 +17,7 @@ const code = {
     python: 'if condition:\n  execute statement',
     java: 'if (condition) {\n  execute statement\n}',
     typescript: 'if (condition) {\n  execute statement\n}',
+    'c++': 'if (condition) {\n  execute statement\n}',
   },
 
   'Write a function': {

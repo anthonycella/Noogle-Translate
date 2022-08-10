@@ -5,11 +5,12 @@ import ExampleCode from './examplecode';
 import code from './code';
 
 function CodeBox({ selectedLanguage, topic }) {
-  const textContent = selectedLanguage === '' ? 'Select a language to begin' : code[topic][selectedLanguage];
+  const textContent = code[topic][selectedLanguage] || 'Select a language to begin';
   // console.log('text content is', textContent);
+  const language = textContent === 'Select a language to begin' ? '' : selectedLanguage;
   return (
     <CodeBoxComponent>
-      <ExampleCode selectedLanguage={selectedLanguage} textContent={textContent} />
+      <ExampleCode selectedLanguage={language} textContent={textContent} />
     </CodeBoxComponent>
   );
 }
