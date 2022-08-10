@@ -18,7 +18,7 @@ function Main() {
     <MainComponent>
       <LearnHowTo setTopic={setTopic} topics={topics} />
       <Languages topic={topic} languages={languages} />
-      <Contribute />
+      <Contribute popUpAModal={() => console.log('I want to pop tart a modal!')} />
     </MainComponent>
   );
 }

@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
-function Contribute() {
+function Contribute({ popUpAModal }) {
   return (
-    <ContributeComponent>
+    <ContributeComponent onClick={popUpAModal}>
       Write a Contribution
     </ContributeComponent>
   );
