@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-function SelectContributionLanguage({ setContributionLanguage }) {
+function SelectContributionLanguage({ setContributionLanguage, exitButton }) {
   return (
     <OverallContainer>
       Select Language:
@@ -15,6 +15,7 @@ function SelectContributionLanguage({ setContributionLanguage }) {
         <option>C++</option>
         <option>Go</option>
       </SelectContributionLanguageComponent>
+      {exitButton}
     </OverallContainer>
   );
 }

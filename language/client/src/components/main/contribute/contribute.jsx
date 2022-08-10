@@ -5,6 +5,7 @@ import SelectContributionLanguage from './selectcontributionlanguage';
 import ContributionTopic from './contributiontopic';
 import ContributionCode from './contributioncode';
 import SubmitContribution from './submitcontribution';
+import ExitButton from './exitbutton';
 
 function submitFields(contributionLanguage, contributionTopic, contributionCode, setVisibility) {
   console.log('contribution language is:', contributionLanguage);
@@ -26,9 +27,20 @@ function Contribute({ visibility, setVisibility }) {
     />
   );
 
+  const exitButton = (
+    <ExitButton
+      setVisibility={() => {
+        setVisibility('hidden');
+      }}
+    />
+  );
+
   return (
     <ContributeComponent visibility={visibility}>
-      <SelectContributionLanguage setContributionLanguage={setContributionLanguage} />
+      <SelectContributionLanguage
+        setContributionLanguage={setContributionLanguage}
+        exitButton={exitButton}
+      />
       <ContributionTopic setContributionTopic={setContributionTopic} />
       <ContributionCode setContributionCode={setContributionCode} submitButton={submitButton} />
     </ContributeComponent>
