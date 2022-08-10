@@ -25,7 +25,7 @@ app.post('/contributions', (req, res) => {
     if (error) {
       res.sendStatus(500);
     } else {
-      console.log('success');
+      console.log('Successfully posted to the database');
       res.status(201).send(result);
     }
   });
