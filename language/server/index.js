@@ -32,11 +32,12 @@ app.post('/contributions', (req, res) => {
 });
 
 app.get('/contributions', (req, res) => {
-  controllers.getContributions((error, result) => {
+  controllers.getContributions(req.query.topic, (error, result) => {
     if (error) {
       res.sendStatus(404);
     } else {
-      res.status(200).send(result);
+      const response = { topic: req.query.topic, results: result };
+      res.status(200).send(response);
     }
   });
 });
