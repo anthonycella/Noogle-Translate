@@ -8,6 +8,12 @@ function SelectTopic({ setTopic, topics }) {
     return <option key={key}>{topic}</option>;
   });
 
+  const indexOfBatman = topics.indexOf('Say I am Batman');
+  const temp = options[indexOfBatman];
+  // eslint-disable-next-line prefer-destructuring
+  options[indexOfBatman] = options[0];
+  options[0] = temp;
+
   return (
     <SelectTopicComponent onChange={(event) => setTopic(event.target.value)}>
       {options}
