@@ -18,7 +18,11 @@ function Main({ data }) {
       <LearnHowTo setTopic={setTopic} topics={topics} />
       <Languages languageData={data[topic]} />
       <Contribute visibility={modalVisibility} setVisibility={setModalVisibility} />
-      <ContributionButton popUpAModal={() => setModalVisibility('visible')} />
+      <ContributionButton popUpAModal={() => {
+        window.scrollTo(0, 0);
+        setModalVisibility('visible');
+      }}
+      />
     </MainComponent>
   );
 }
