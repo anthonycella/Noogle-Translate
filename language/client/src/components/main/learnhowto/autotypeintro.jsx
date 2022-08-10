@@ -2,6 +2,8 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
+import Blinker from './blinker';
+
 function getBlankText() {
   let blankText = '';
 
@@ -10,6 +12,14 @@ function getBlankText() {
   }
 
   return blankText;
+}
+
+function flipBlinker(blinker) {
+  if (blinker === '|') {
+    return '';
+  }
+
+  return '|';
 }
 
 function getNewSettings(text, index, topic, topics, direction) {
@@ -26,7 +36,8 @@ function getNewSettings(text, index, topic, topics, direction) {
       direction = 'backward';
     }
   } else {
-    newText[index] = ' ';
+    newText[index] = '';
+    newText[index + 1] = '';
     index -= 1;
 
     if (index === -1) {
@@ -39,7 +50,6 @@ function getNewSettings(text, index, topic, topics, direction) {
       direction = 'forward';
     }
   }
-
   const newSetText = newText.join('');
 
   return [newSetText, index, topic, direction, newInterval];
@@ -53,13 +63,13 @@ function autoType(text, index, topic, topics, direction, setText, interval) {
 }
 
 function AutoTypeIntro({ topics, startSearch }) {
-  const [blinker, setBlinker] = useState('|');
-  const [[text, index, topic, direction, interval], setText] = useState([getBlankText(), 0, topics[0], 'forward', 75]);
-  autoType(text, index, topic, topics, direction, setText, interval, blinker);
+  const [[text, index, topic, direction, interval], setText] = useState(['', 0, topics[0], 'forward', 75]);
+  autoType(text, index, topic, topics, direction, setText, interval);
   return (
     <OverallComponent>
       <AutoTypeIntroComponent onClick={startSearch}>
         {text}
+        <Blinker />
       </AutoTypeIntroComponent>
       <BarComponent />
     </OverallComponent>
@@ -69,8 +79,11 @@ function AutoTypeIntro({ topics, startSearch }) {
 const AutoTypeIntroComponent = styled.div`
   display: flex;
   flex-direction: row;
+  align-items: center;
   width: 300px;
   white-space: pre;
+  margin-top: 2px;
+  height: 36px;
   font-size: 34px;
 `;
 
