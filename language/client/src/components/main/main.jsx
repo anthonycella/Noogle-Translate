@@ -25,7 +25,7 @@ function Main() {
 
 const MainComponent = styled.div`
   margin-top: 5px;
-  height: 1000px;
+  height: 1500px;
   width: 750px;
 `;
 
