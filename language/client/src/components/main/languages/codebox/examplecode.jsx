@@ -3,6 +3,8 @@ import styled from 'styled-components';
 
 function getColorFromSelectedLanguage(selectedLanguage) {
   switch (selectedLanguage) {
+    case 'javascript':
+      return '#f4c20d';
     case 'python':
       return '#3cba54';
     case 'java':
@@ -12,7 +14,7 @@ function getColorFromSelectedLanguage(selectedLanguage) {
     case 'go':
       return '#B051CA';
     case 'c++':
-      return '#f4c20d';
+      return '#F89E2C';
     default:
       return 'white';
   }

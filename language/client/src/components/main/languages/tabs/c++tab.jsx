@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 function CPlusPlusTab({ selectedLanguage, setLanguageToCPlusPlus }) {
-  const color = selectedLanguage === 'c++' ? '#fff' : '#f4c20d';
+  const color = selectedLanguage === 'c++' ? '#fff' : '#F89E2C';
 
   return (
     <CPlusPlusTabComponent
@@ -21,7 +21,7 @@ const CPlusPlusTabComponent = styled.div`
   height: 44px;
   width: 100px;
   background-color: ${(props) => props.background};
-  border: 3px solid #f4c20d;
+  border: 3px solid #F89E2C;
   border-radius: 5px 5px 0px 0px;
 `;
 
