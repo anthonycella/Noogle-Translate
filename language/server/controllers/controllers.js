@@ -1,6 +1,12 @@
 const Contributions = require('../../db/models/Contribution');
 
 function getAllTopics(callback) {
+  // Contributions.deleteMany({ topic: 'Writing an if statement' }, (error, result) => {
+  //   if (error) {
+  //     console.log(error);
+  //   }
+  //   console.log(result);
+  // });
   Contributions.find({}, 'topic').distinct('topic', (error, topics) => {
     callback(error, topics);
   });
