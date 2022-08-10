@@ -12,10 +12,16 @@ function Main({ data }) {
   const [topic, setTopic] = useState('Say I am Batman');
 
   const [modalVisibility, setModalVisibility] = useState('hidden');
+  const [searchVisibility, setSearchVisibility] = useState('hidden');
 
   return (
     <MainComponent>
-      <LearnHowTo setTopic={setTopic} topics={topics} />
+      <LearnHowTo
+        setTopic={setTopic}
+        topics={topics}
+        searchVisibility={searchVisibility}
+        setSearchVisibility={setSearchVisibility}
+      />
       <Languages languageData={data[topic]} />
       <Contribute visibility={modalVisibility} setVisibility={setModalVisibility} />
       <ContributionButton popUpAModal={() => {
