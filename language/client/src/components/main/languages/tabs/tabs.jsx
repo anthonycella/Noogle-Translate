@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import getTabFromLanguage from './gettab';
+import LanguagesTab from './languagestab';
 
 function Tabs({ selectedLanguage, setSelectedLanguage, languages }) {
   let key = 100;
@@ -10,6 +11,9 @@ function Tabs({ selectedLanguage, setSelectedLanguage, languages }) {
     return getTabFromLanguage(selectedLanguage, setSelectedLanguage, language, key);
   });
 
+  if (tabs.length === 0) {
+    return <LanguagesTab />;
+  }
   return (
     <TabsComponent>
       {tabs}
