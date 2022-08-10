@@ -21,7 +21,12 @@ function getColorFromSelectedLanguage(selectedLanguage) {
 }
 
 function ExampleCode({ textContent, selectedLanguage }) {
-  const color = getColorFromSelectedLanguage(selectedLanguage);
+  let color;
+  if (textContent === 'Select a language to begin') {
+    color = 'white';
+  } else {
+    color = getColorFromSelectedLanguage(selectedLanguage);
+  }
   return (
     <ExampleCodeComponent color={color}>
       {textContent}

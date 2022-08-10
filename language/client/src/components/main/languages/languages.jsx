@@ -16,7 +16,10 @@ function Languages({ languageData }) {
         setSelectedLanguage={setSelectedLanguage}
         languages={languages}
       />
-      <CodeBox textContent={textContent} />
+      <CodeBox
+        textContent={textContent}
+        language={selectedLanguage}
+      />
     </LanguagesComponent>
   );
 }

@@ -16,7 +16,7 @@ function Main({ data }) {
   return (
     <MainComponent>
       <LearnHowTo setTopic={setTopic} topics={topics} />
-      <Languages languageData={topics[topic]} />
+      <Languages languageData={data[topic]} />
       <Contribute visibility={modalVisibility} setVisibility={setModalVisibility} />
       <ContributionButton popUpAModal={() => setModalVisibility('visible')} />
     </MainComponent>
