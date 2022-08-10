@@ -1,5 +1,6 @@
 const code = {
   'Say I am Batman': {
+    javascript: 'console.log("I am Batman")',
     python: 'print("I am Batman")',
     java: 'System.out.println("I am Batman");',
     typescript: 'console.log("I am Batman")',

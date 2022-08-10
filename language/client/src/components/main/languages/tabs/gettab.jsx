@@ -1,5 +1,6 @@
 import React from 'react';
 
+import JavascriptTab from './javascripttab';
 import PythonTab from './pythontab';
 import JavaTab from './javatab';
 import TypescriptTab from './typescripttab';
@@ -29,6 +30,14 @@ function getTabFromLanguage(selectedLanguage, setSelectedLanguage, language, key
         <TypescriptTab
           selectedLanguage={selectedLanguage}
           setLanguageToTypescript={() => setSelectedLanguage('typescript')}
+          key={key}
+        />
+      );
+    case 'javascript':
+      return (
+        <JavascriptTab
+          selectedLanguage={selectedLanguage}
+          setLanguageToJavascript={() => setSelectedLanguage('javascript')}
           key={key}
         />
       );
