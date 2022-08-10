@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import Tabs from './tabs/tabs';
 import CodeBox from './codebox/codebox';
 
-
 function getLanguages(languageData) {
   const languages = [];
   if (languageData.javascript) {
