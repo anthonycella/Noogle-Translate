@@ -3,6 +3,8 @@ import styled from 'styled-components';
 
 import Languages from './languages/languages';
 import LearnHowTo from './learnhowto/learnhowto';
+import Contribute from './contribute/contribute';
+
 import Code from './languages/codebox/code';
 
 function Main() {
@@ -16,6 +18,7 @@ function Main() {
     <MainComponent>
       <LearnHowTo setTopic={setTopic} topics={topics} />
       <Languages topic={topic} languages={languages} />
+      <Contribute />
     </MainComponent>
   );
 }
