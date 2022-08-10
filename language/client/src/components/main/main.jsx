@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import Languages from './languages/languages';
 import LearnHowTo from './learnhowto/learnhowto';
 import Contribute from './contribute/contribute';
+import ContributionButton from './contribute/contributionbutton';
 
 import Code from './languages/codebox/code';
 
@@ -18,7 +19,8 @@ function Main() {
     <MainComponent>
       <LearnHowTo setTopic={setTopic} topics={topics} />
       <Languages topic={topic} languages={languages} />
-      <Contribute popUpAModal={() => console.log('I want to pop tart a modal!')} />
+      <Contribute />
+      <ContributionButton popUpAModal={() => console.log('I want to pop tart a modal!')} />
     </MainComponent>
   );
 }
