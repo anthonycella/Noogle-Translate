@@ -6,6 +6,20 @@ function getAllTopics(callback) {
   });
 }
 
+function addContribution(entry, callback) {
+  Contributions.findOneAndUpdate(entry, entry, { upsert: true }, (error, result) => {
+    callback(error, result);
+  });
+}
+
+function getContributions(topic, callback) {
+  Contributions.find({ topic }, ['language', 'code'], (error, result) => {
+    callback(error, result);
+  });
+}
+
 module.exports = {
   getAllTopics,
+  addContribution,
+  getContributions,
 };
