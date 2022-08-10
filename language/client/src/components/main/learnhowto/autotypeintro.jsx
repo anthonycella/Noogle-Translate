@@ -62,12 +62,12 @@ function autoType(text, index, topic, topics, direction, setText, interval) {
   }, interval);
 }
 
-function AutoTypeIntro({ topics, startSearch }) {
+function AutoTypeIntro({ topics, setTopic }) {
   const [[text, index, topic, direction, interval], setText] = useState(['', 0, topics[0], 'forward', 75]);
   autoType(text, index, topic, topics, direction, setText, interval);
   return (
     <OverallComponent>
-      <AutoTypeIntroComponent onClick={startSearch}>
+      <AutoTypeIntroComponent onClick={() => setTopic(topic)}>
         {text}
         <Blinker />
       </AutoTypeIntroComponent>

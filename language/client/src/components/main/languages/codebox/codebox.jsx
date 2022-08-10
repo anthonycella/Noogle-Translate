@@ -2,21 +2,21 @@ import React from 'react';
 import styled from 'styled-components';
 
 import ExampleCode from './examplecode';
-import code from './code';
+import TopicSelected from './topicselected';
 
-function CodeBox({ textContent, language }) {
+function CodeBox({ textContent, language, topic }) {
   return (
     <CodeBoxComponent>
-      <ExampleCode selectedLanguage={language} textContent={textContent} />
+      <TopicSelected textContent={topic} />
+      <ExampleCode topic={topic} selectedLanguage={language} textContent={textContent} />
     </CodeBoxComponent>
   );
 }
 
 const CodeBoxComponent = styled.div`
   display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 700px;
+  flex-direction: column;
+  min-height: 750px;
   width: 750px;
   background-color: #CCC;
 `;

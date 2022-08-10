@@ -20,16 +20,23 @@ function getColorFromSelectedLanguage(selectedLanguage) {
   }
 }
 
-function ExampleCode({ textContent, selectedLanguage }) {
+function ExampleCode({ textContent, selectedLanguage, topic }) {
   let color;
-  if (textContent === 'Select a language to begin') {
+  let displayedText = textContent;
+
+  if (displayedText === 'Select a language to begin') {
     color = 'white';
   } else {
     color = getColorFromSelectedLanguage(selectedLanguage);
   }
+
+  if (topic === 'Select a topic to begin') {
+    displayedText = topic;
+  }
+
   return (
     <ExampleCodeComponent color={color}>
-      {textContent}
+      {displayedText}
     </ExampleCodeComponent>
   );
 }
@@ -42,6 +49,8 @@ const ExampleCodeComponent = styled.div`
   color: ${(props) => props.color};
   font-size: 18px;
   background-color: #333;
+  margin-left: 25px;
+  margin-right: 25px;
 `;
 
 export default ExampleCode;

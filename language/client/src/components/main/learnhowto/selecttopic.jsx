@@ -1,14 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 
-function SelectTopic({ setTopic, topics }) {
+function SelectTopic({ setTopic, topics, selectedTopic }) {
   let key = 0;
   const options = topics.map((topic) => {
     key += 1;
     return <option key={key}>{topic}</option>;
   });
 
-  const indexOfBatman = topics.indexOf('Say I am Batman');
+  const indexOfBatman = topics.indexOf(selectedTopic);
   const temp = options[indexOfBatman];
   // eslint-disable-next-line prefer-destructuring
   options[indexOfBatman] = options[0];

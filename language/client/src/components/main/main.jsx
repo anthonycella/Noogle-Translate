@@ -9,20 +9,26 @@ import ContributionButton from './contribute/contributionbutton';
 function Main({ data }) {
   const topics = Object.keys(data) || ['Say I am Batman'];
 
-  const [topic, setTopic] = useState('Say I am Batman');
+  const [topic, setTopic] = useState('Select a topic to begin');
 
   const [modalVisibility, setModalVisibility] = useState('hidden');
   const [searchVisibility, setSearchVisibility] = useState('hidden');
+
+  const languageData = data[topic] || {};
 
   return (
     <MainComponent>
       <LearnHowTo
         setTopic={setTopic}
         topics={topics}
+        topic={topic}
         searchVisibility={searchVisibility}
         setSearchVisibility={setSearchVisibility}
       />
-      <Languages languageData={data[topic]} />
+      <Languages
+        languageData={languageData}
+        topic={topic}
+      />
       <Contribute visibility={modalVisibility} setVisibility={setModalVisibility} />
       <ContributionButton popUpAModal={() => {
         window.scrollTo(0, 0);

@@ -33,7 +33,7 @@ function getLanguages(languageData) {
   return languages;
 }
 
-function Languages({ languageData }) {
+function Languages({ topic, languageData }) {
   const languages = getLanguages(languageData);
   const [selectedLanguage, setSelectedLanguage] = useState('');
 
@@ -46,6 +46,7 @@ function Languages({ languageData }) {
         languages={languages}
       />
       <CodeBox
+        topic={topic}
         textContent={textContent}
         language={selectedLanguage}
       />

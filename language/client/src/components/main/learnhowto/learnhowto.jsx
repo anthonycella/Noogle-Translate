@@ -5,14 +5,14 @@ import SelectTopic from './selecttopic';
 import AutoTypeIntro from './autotypeintro';
 
 function LearnHowTo({
-  setTopic, topics, searchVisibility, setSearchVisibility,
+  setTopic, topics, topic,
 }) {
-  if (searchVisibility === 'hidden') {
+  if (topic === 'Select a topic to begin') {
     return (
       <LearnHowToComponent>
         Learn how to
         &nbsp;
-        <AutoTypeIntro topics={topics} startSearch={() => setSearchVisibility('visible')} />
+        <AutoTypeIntro setTopic={setTopic} topics={topics} />
         &nbsp;
         in...
       </LearnHowToComponent>
@@ -22,7 +22,7 @@ function LearnHowTo({
     <LearnHowToComponent>
       Learn how to
       &nbsp;
-      <SelectTopic setTopic={setTopic} topics={topics} />
+      <SelectTopic setTopic={setTopic} topics={topics} selectedTopic={topic} />
       &nbsp;
       in...
     </LearnHowToComponent>
