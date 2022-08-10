@@ -16,7 +16,6 @@ function submitFields(contributionLanguage, contributionTopic, contributionCode,
   };
 
   axios.post('/contributions', contribution);
-
   setVisibility('hidden');
 }
 
