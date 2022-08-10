@@ -10,17 +10,18 @@ import Code from './languages/codebox/code';
 
 function Main() {
   const [topic, setTopic] = useState('Say I am Batman');
-  // console.log('topic is', topic);
+
   const topics = ['Say I am Batman', 'Write an if statement', 'Create a for loop', 'Write a function'];
   const languages = Object.keys(Code[topic]);
-  // console.log("🚀 ~ file: Main.jsx ~ line 13 ~ Main ~ languages", languages);
+
+  const [modalVisibility, setModalVisibility] = useState('hidden');
 
   return (
     <MainComponent>
       <LearnHowTo setTopic={setTopic} topics={topics} />
       <Languages topic={topic} languages={languages} />
-      <Contribute />
-      <ContributionButton popUpAModal={() => console.log('I want to pop tart a modal!')} />
+      <Contribute visibility={modalVisibility} setVisibility={setModalVisibility} />
+      <ContributionButton popUpAModal={() => setModalVisibility('visible')} />
     </MainComponent>
   );
 }
