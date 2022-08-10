@@ -30,6 +30,9 @@ function LearnHowTo({
 }
 
 const LearnHowToComponent = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
   text-align: center;
   font-size: 36px;
   margin: 15px;

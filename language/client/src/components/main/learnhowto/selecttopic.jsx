@@ -24,7 +24,6 @@ function SelectTopic({ setTopic, topics }) {
 const SelectTopicComponent = styled.select`
   text-align: center;
   font-size: 24px;
-  margin: 15px;
   background-color: #CCC;
   border: 1px solid #CCC;
   color: #333;
