@@ -1,7 +1,7 @@
 const Contributions = require('../../db/models/Contribution');
 
 function getAllTopics(callback) {
-  // Contributions.deleteMany({ topic: 'Writing an if statement' }, (error, result) => {
+  // Contributions.deleteMany({ topic: 'Define a function', language: 'c++' }, (error, result) => {
   //   if (error) {
   //     console.log(error);
   //   }
