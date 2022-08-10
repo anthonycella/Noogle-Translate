@@ -9,9 +9,10 @@ const code = {
   },
 
   'Create a for loop': {
+    javascript: 'for (i = start; i < end; i++) {\n  execute statement\n  execute statement\n}',
     python: 'for i in range(start inclusive, end exclusive):\n  execute statement\n  execute statement',
     java: 'for (int i = start; i < end; i++) {\n  execute statement\n  execute statement\n}',
-    typescript: 'for (int i = start; i < end; i++) {\n  execute statement\n  execute statement\n}',
+    typescript: 'for (i = start; i < end; i++) {\n  execute statement\n  execute statement\n}',
   },
 
   'Write an if statement': {
