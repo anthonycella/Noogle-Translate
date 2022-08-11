@@ -2,12 +2,22 @@ import React from 'react';
 import styled from 'styled-components';
 
 function JavascriptTab({ selectedLanguage, setLanguageToJavascript }) {
-  const color = selectedLanguage === 'javascript' ? '#fff' : '#f4c20d';
+  let color;
+  let hoverColor;
+
+  if (selectedLanguage === 'javascript') {
+    color = '#fff';
+    hoverColor = '#f4c20d';
+  } else {
+    color = '#f4c20d';
+    hoverColor = '#fff';
+  }
 
   return (
     <JavascriptTabComponent
       background={color}
       onClick={setLanguageToJavascript}
+      hoverColor={hoverColor}
     >
       Javascript
     </JavascriptTabComponent>
@@ -17,7 +27,7 @@ function JavascriptTab({ selectedLanguage, setLanguageToJavascript }) {
 const JavascriptTabComponent = styled.div`
   &:hover {
     cursor: pointer;
-    color: white;
+    color: ${(props) => props.hoverColor};
   }
   display: flex;
   justify-content: center;

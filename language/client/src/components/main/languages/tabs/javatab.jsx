@@ -2,12 +2,22 @@ import React from 'react';
 import styled from 'styled-components';
 
 function JavaTab({ selectedLanguage, setLanguageToJava }) {
-  const color = selectedLanguage === 'java' ? '#fff' : '#db3236';
+  let color;
+  let hoverColor;
+
+  if (selectedLanguage === 'java') {
+    color = '#fff';
+    hoverColor = '#db3236';
+  } else {
+    color = '#db3236';
+    hoverColor = '#fff';
+  }
 
   return (
     <JavaTabComponent
       background={color}
       onClick={setLanguageToJava}
+      hoverColor={hoverColor}
     >
       Java
     </JavaTabComponent>
@@ -17,7 +27,7 @@ function JavaTab({ selectedLanguage, setLanguageToJava }) {
 const JavaTabComponent = styled.div`
   &:hover {
     cursor: pointer;
-    color: white;
+    color: ${(props) => props.hoverColor};
   }
   display: flex;
   justify-content: center;

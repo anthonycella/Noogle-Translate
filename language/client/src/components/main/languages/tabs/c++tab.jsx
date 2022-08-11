@@ -2,12 +2,22 @@ import React from 'react';
 import styled from 'styled-components';
 
 function CPlusPlusTab({ selectedLanguage, setLanguageToCPlusPlus }) {
-  const color = selectedLanguage === 'c++' ? '#fff' : '#F89E2C';
+  let color;
+  let hoverColor;
+
+  if (selectedLanguage === 'c++') {
+    color = '#fff';
+    hoverColor = '#F89E2C';
+  } else {
+    color = '#F89E2C';
+    hoverColor = '#fff';
+  }
 
   return (
     <CPlusPlusTabComponent
       background={color}
       onClick={setLanguageToCPlusPlus}
+      hoverColor={hoverColor}
     >
       C++
     </CPlusPlusTabComponent>
@@ -17,7 +27,7 @@ function CPlusPlusTab({ selectedLanguage, setLanguageToCPlusPlus }) {
 const CPlusPlusTabComponent = styled.div`
   &:hover {
     cursor: pointer;
-    color: white;
+    color: ${(props) => props.hoverColor};
   }
   display: flex;
   justify-content: center;

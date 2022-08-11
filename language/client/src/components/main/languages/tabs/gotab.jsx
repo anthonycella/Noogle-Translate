@@ -2,12 +2,22 @@ import React from 'react';
 import styled from 'styled-components';
 
 function GoTab({ selectedLanguage, setLanguageToGo }) {
-  const color = selectedLanguage === 'go' ? '#fff' : '#B051CA';
+  let color;
+  let hoverColor;
+
+  if (selectedLanguage === 'go') {
+    color = '#fff';
+    hoverColor = '#B051CA';
+  } else {
+    color = '#B051CA';
+    hoverColor = '#fff';
+  }
 
   return (
     <GoTabComponent
       background={color}
       onClick={setLanguageToGo}
+      hoverColor={hoverColor}
     >
       Go
     </GoTabComponent>
@@ -17,7 +27,7 @@ function GoTab({ selectedLanguage, setLanguageToGo }) {
 const GoTabComponent = styled.div`
   &:hover {
     cursor: pointer;
-    color: white;
+    color: ${(props) => props.hoverColor};
   }
   display: flex;
   justify-content: center;
