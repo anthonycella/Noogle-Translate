@@ -9,7 +9,7 @@ import ContributionButton from './contribute/contributionbutton';
 function Main({ data, searchBarVisibility, setSearchBarVisibility, trie }) {
   const topics = Object.keys(data) || ['Say I am Batman'];
 
-  const [topic, setTopic] = useState('Select a topic to begin');
+  const [[topic, wasSetFromSearch], setTopic] = useState(['Select a topic to begin', false]);
 
   const [modalVisibility, setModalVisibility] = useState('hidden');
   // const [dropdownVisibility, setDropdownVisibility] = useState('hidden');

@@ -15,7 +15,7 @@ function SelectTopic({ setTopic, topics, selectedTopic }) {
   options[0] = temp;
 
   return (
-    <SelectTopicComponent onChange={(event) => setTopic(event.target.value)}>
+    <SelectTopicComponent onChange={(event) => setTopic([event.target.value, false])}>
       {options}
     </SelectTopicComponent>
   );
