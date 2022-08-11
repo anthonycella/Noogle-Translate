@@ -18,7 +18,7 @@ Trie.prototype.startsWith = function (word = '', prefix = '') {
     // }
 
     const nextLetter = word[0];
-    console.log(typeof nextLetter);
+    // console.log(typeof nextLetter);
     for (let currentIndex = 0; currentIndex < childLetters.length; currentIndex += 1) {
       if (nextLetter.toUpperCase() === childLetters[currentIndex].toUpperCase()) {
         locationOfNextLetterInChildren = currentIndex;
@@ -57,10 +57,20 @@ Trie.prototype.getChildWords = function () {
       break;
     }
 
-    const currentChildWords = currentChild.getChildWords()
-      .map((childWord) => prefix + childWord);
+    const currentChildWords = currentChild.getChildWords();
 
-    childWords.push(currentChildWords);
+    for (const childWord of currentChildWords) {
+      // console.log('child word is', childWord);
+      if (typeof childWord === 'string') {
+        childWords.push(prefix + childWord);
+      }
+
+      else {
+        for (const child of childWord) {
+          childWords.push(prefix + child);
+        }
+      }
+    };
   }
 
   if (childWords.length === 0) {
