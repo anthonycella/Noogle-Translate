@@ -10,8 +10,8 @@ function App() {
   const prefixTrie = new Trie('root');
   prefixTrie.insertChild('apple');
   prefixTrie.insertChild('app in store');
-  const printable = prefixTrie.children;
-  console.log('Trie is', prefixTrie);
+  const printable = prefixTrie.startsWith('app');
+  console.log('Trie is', printable);
 
   const [data, setData] = React.useState({});
   const [searchBarVisibility, setSearchBarVisibility] = React.useState(false);
