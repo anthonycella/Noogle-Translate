@@ -62,16 +62,16 @@ function autoType(text, index, topic, topics, direction, setText, interval) {
   }, interval);
 }
 
-function AutoTypeIntro({ topics, setTopic }) {
+function AutoTypeIntro({ topics, onClick }) {
   const [[text, index, topic, direction, interval], setText] = useState(['', 0, topics[0], 'forward', 75]);
   autoType(text, index, topic, topics, direction, setText, interval);
   return (
-    <OverallComponent onClick={() => setTopic(topic)}>
-      <AutoTypeIntroComponent>
+    <OverallComponent onClick={onClick} className="search-bar">
+      <AutoTypeIntroComponent className="search-bar">
         {text}
-        <Blinker />
+        <Blinker className="search-bar" />
       </AutoTypeIntroComponent>
-      <BarComponent />
+      <BarComponent className="search-bar" />
     </OverallComponent>
   );
 }

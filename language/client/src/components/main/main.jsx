@@ -11,6 +11,12 @@ function Main({ data, searchBarVisibility, setSearchBarVisibility, trie }) {
 
   const [[topic, wasSetFromSearch], setTopic] = useState(['Select a topic to begin', false]);
 
+  if (wasSetFromSearch && searchBarVisibility) {
+    setSearchBarVisibility(false);
+  } else if (wasSetFromSearch) {
+    setTopic([topic, false]);
+  }
+
   const [modalVisibility, setModalVisibility] = useState('hidden');
   // const [dropdownVisibility, setDropdownVisibility] = useState('hidden');
 

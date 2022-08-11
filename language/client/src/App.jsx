@@ -56,7 +56,7 @@ function App() {
   }
 
   function turnOffSearchBarVisibility(event) {
-    // console.log(event.target.closest('div').className);
+    console.log(event.target.className);
 
     let identifier = event.target.className;
     let isSearchBarElement = typeof identifier === 'string' && identifier.includes('search-bar');
@@ -65,10 +65,10 @@ function App() {
       isSearchBarElement = identifier.includes('search-bar');
     }
     if (isSearchBarElement) {
-      // console.log('turning on search bar visibility');
+      console.log('turning on search bar visibility');
       setSearchBarVisibility(true);
     } else {
-      // console.log('turning off search bar visibility');
+      console.log('turning off search bar visibility');
       setSearchBarVisibility(false);
     }
   }
