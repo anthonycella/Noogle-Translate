@@ -12,7 +12,29 @@ function Tabs({ selectedLanguage, setSelectedLanguage, languages }) {
   });
 
   if (tabs.length === 0) {
-    return <LanguagesTab />;
+    const languagesTab = [<LanguagesTab />];
+    const listOfLanguages = [
+      'javascript',
+      'typescript',
+      'python',
+      'java',
+      'c++',
+      'go',
+    ];
+
+    let exampleKey = 100;
+    const exampleLanugages = listOfLanguages.map((language) => {
+      exampleKey += 1;
+      return getTabFromLanguage('', () => null, language, exampleKey);
+    });
+
+    const fullList = languagesTab.concat(exampleLanugages);
+
+    return (
+      <TabsComponent>
+        {fullList}
+      </TabsComponent>
+    );
   }
   return (
     <TabsComponent>
