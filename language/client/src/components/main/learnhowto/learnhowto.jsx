@@ -11,7 +11,13 @@ function LearnHowTo({
 }) {
   if (searchBarVisibility) {
     return (
-      <SearchBar />
+      <LearnHowToComponent>
+        Learn how to
+        &nbsp;
+        <SearchBar />
+        &nbsp;
+        in...
+      </LearnHowToComponent>
     );
   }
   if (topic === 'Select a topic to begin') {

@@ -49,7 +49,18 @@ function App() {
   }
 
   function turnOffSearchBarVisibility(event) {
-    if (event.target.className !== 'search-bar') {
+    console.log(event.target.closest('div').className);
+
+    let identifier = event.target.className;
+    let isSearchBarElement = typeof identifier === 'string' && identifier.includes('search-bar');
+    if (!isSearchBarElement) {
+      identifier = event.target.closest('div').className;
+      isSearchBarElement = identifier.includes('search-bar');
+    }
+    if (isSearchBarElement) {
+      console.log('turning on search bar visibility');
+      setSearchBarVisibility(true);
+    } else {
       console.log('turning off search bar visibility');
       setSearchBarVisibility(false);
     }

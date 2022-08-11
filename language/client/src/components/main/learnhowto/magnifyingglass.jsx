@@ -2,10 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 import { GiMagnifyingGlass } from 'react-icons/gi';
 
-function MagnifyingGlass() {
+function MagnifyingGlass({ onClick }) {
   return (
-    <MagnifyingGlassComponent>
-      <GiMagnifyingGlass />
+    <MagnifyingGlassComponent className="search-bar">
+      <GiMagnifyingGlass class="search-bar" />
     </MagnifyingGlassComponent>
   );
 }

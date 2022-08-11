@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 function SearchBar() {
   return (
-    <SearchBarComponent type="text" />
+    <SearchBarComponent type="text" className="search-bar" />
   );
 }
 
