@@ -2,8 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 
 // import SelectTopic from './selecttopic';
-import AutoTypeIntro from './autotypeintro';
 // import MagnifyingGlass from './magnifyingglass';
+import AutoTypeIntro from './autotypeintro';
+import PlainTopic from './search/plaintopic';
+
 import Search from './search/search';
 
 function LearnHowTo({
@@ -20,11 +22,24 @@ function LearnHowTo({
       </LearnHowToComponent>
     );
   }
+
+  if (topic === 'Select a topic to begin') {
+    return (
+      <LearnHowToComponent>
+        Learn how to
+        &nbsp;
+        <AutoTypeIntro onClick={() => setSearchBarVisibility(true)} topics={topics} />
+        &nbsp;
+        in...
+      </LearnHowToComponent>
+    );
+  }
+
   return (
     <LearnHowToComponent>
       Learn how to
       &nbsp;
-      <AutoTypeIntro onClick={() => setSearchBarVisibility(true)} topics={topics} />
+      <PlainTopic onClick={() => setSearchBarVisibility(true)} topic={topic} />
       &nbsp;
       in...
     </LearnHowToComponent>
