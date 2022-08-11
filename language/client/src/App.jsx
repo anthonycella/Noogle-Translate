@@ -5,8 +5,11 @@ import { useAuth0 } from '@auth0/auth0-react';
 
 import Title from './components/title/title';
 import Main from './components/main/main';
+
 import LoginButton from './login/loginbutton';
-import Profile from './login/profile';
+import LogoutButton from './login/logoutbutton';
+// import Profile from './login/profile';
+
 import Trie from './trie';
 
 function App() {
@@ -14,9 +17,13 @@ function App() {
   const [searchBarVisibility, setSearchBarVisibility] = React.useState(false);
 
   const { isAuthenticated } = useAuth0();
+  // console.log("🚀 ~ file: App.jsx ~ line 20 ~ App ~ isAuthenticated", isAuthenticated);
 
-  console.log(isAuthenticated);
-  const profileElement = isAuthenticated ? <Profile /> : <LoginButton />;
+  let profileElement = null;
+
+  if (trie !== null) {
+    profileElement = isAuthenticated ? <LogoutButton /> : <LoginButton />;
+  }
 
   if (Object.keys(data).length === 0) {
     const prefixTrie = new Trie('root');
