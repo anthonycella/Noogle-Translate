@@ -4,9 +4,46 @@ import styled from 'styled-components';
 import Tabs from './tabs/tabs';
 import CodeBox from './codebox/codebox';
 
-function Languages({ topic, languages }) {
+function getLanguages(languageData) {
+  const languages = [];
+  if (languageData.javascript) {
+    languages.push('javascript');
+  }
+
+  if (languageData.typescript) {
+    languages.push('typescript');
+  }
+
+  if (languageData.python) {
+    languages.push('python');
+  }
+
+  if (languageData.java) {
+    languages.push('java');
+  }
+
+  if (languageData['c++']) {
+    languages.push('c++');
+  }
+
+  if (languageData.go) {
+    languages.push('go');
+  }
+
+  return languages;
+}
+
+function Languages({ topic, languageData }) {
+  const languages = getLanguages(languageData);
   const [selectedLanguage, setSelectedLanguage] = useState('');
 
+  const needsDefaultLanguage = selectedLanguage === '' && topic !== 'Select a topic to begin';
+
+  if (needsDefaultLanguage && languages.length !== 0) {
+    setSelectedLanguage(languages[0]);
+  }
+
+  const textContent = languageData[selectedLanguage] || 'Select a language to begin';
   return (
     <LanguagesComponent>
       <Tabs
@@ -14,7 +51,11 @@ function Languages({ topic, languages }) {
         setSelectedLanguage={setSelectedLanguage}
         languages={languages}
       />
-      <CodeBox selectedLanguage={selectedLanguage} topic={topic} />
+      <CodeBox
+        topic={topic}
+        textContent={textContent}
+        language={selectedLanguage}
+      />
     </LanguagesComponent>
   );
 }

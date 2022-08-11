@@ -6,22 +6,42 @@ import LearnHowTo from './learnhowto/learnhowto';
 import Contribute from './contribute/contribute';
 import ContributionButton from './contribute/contributionbutton';
 
-import Code from './languages/codebox/code';
+function Main({ data, searchBarVisibility, setSearchBarVisibility, trie }) {
+  const topics = Object.keys(data) || ['Say I am Batman'];
 
-function Main() {
-  const [topic, setTopic] = useState('Say I am Batman');
+  const [[topic, wasSetFromSearch], setTopic] = useState(['Select a topic to begin', false]);
 
-  const topics = ['Say I am Batman', 'Write an if statement', 'Create a for loop', 'Write a function'];
-  const languages = Object.keys(Code[topic]);
+  if (wasSetFromSearch && searchBarVisibility) {
+    setSearchBarVisibility(false);
+  } else if (wasSetFromSearch) {
+    setTopic([topic, false]);
+  }
 
   const [modalVisibility, setModalVisibility] = useState('hidden');
+  // const [dropdownVisibility, setDropdownVisibility] = useState('hidden');
+
+  const languageData = data[topic] || {};
 
   return (
     <MainComponent>
-      <LearnHowTo setTopic={setTopic} topics={topics} />
-      <Languages topic={topic} languages={languages} />
+      <LearnHowTo
+        setTopic={setTopic}
+        topics={topics}
+        topic={topic}
+        searchBarVisibility={searchBarVisibility}
+        setSearchBarVisibility={setSearchBarVisibility}
+        trie={trie}
+      />
+      <Languages
+        languageData={languageData}
+        topic={topic}
+      />
       <Contribute visibility={modalVisibility} setVisibility={setModalVisibility} />
-      <ContributionButton popUpAModal={() => setModalVisibility('visible')} />
+      <ContributionButton popUpAModal={() => {
+        window.scrollTo(0, 0);
+        setModalVisibility('visible');
+      }}
+      />
     </MainComponent>
   );
 }

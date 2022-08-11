@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import axios from 'axios';
 
 import SelectContributionLanguage from './selectcontributionlanguage';
 import ContributionTopic from './contributiontopic';
@@ -8,9 +9,13 @@ import SubmitContribution from './submitcontribution';
 import ExitButton from './exitbutton';
 
 function submitFields(contributionLanguage, contributionTopic, contributionCode, setVisibility) {
-  console.log('contribution language is:', contributionLanguage);
-  console.log('contribution topic is:', contributionTopic);
-  console.log('contribution code is:', contributionCode);
+  const contribution = {
+    language: contributionLanguage,
+    topic: contributionTopic,
+    code: contributionCode,
+  };
+
+  axios.post('/contributions', contribution);
   setVisibility('hidden');
 }
 

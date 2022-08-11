@@ -10,6 +10,8 @@ function ExitButton({ setVisibility }) {
 }
 
 const ExitComponent = styled.button`
+  background-color: none;
+  border: none;
   position: absolute;
   font-size: 18px;
   margin-left: 430px;
