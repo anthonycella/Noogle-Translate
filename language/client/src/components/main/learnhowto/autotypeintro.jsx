@@ -66,8 +66,8 @@ function AutoTypeIntro({ topics, setTopic }) {
   const [[text, index, topic, direction, interval], setText] = useState(['', 0, topics[0], 'forward', 75]);
   autoType(text, index, topic, topics, direction, setText, interval);
   return (
-    <OverallComponent>
-      <AutoTypeIntroComponent onClick={() => setTopic(topic)}>
+    <OverallComponent onClick={() => setTopic(topic)}>
+      <AutoTypeIntroComponent>
         {text}
         <Blinker />
       </AutoTypeIntroComponent>
@@ -88,6 +88,9 @@ const AutoTypeIntroComponent = styled.div`
 `;
 
 const OverallComponent = styled.div`
+  &:hover {
+    cursor: pointer;
+  }
   display: flex;
   flex-direction: column;
 `;
