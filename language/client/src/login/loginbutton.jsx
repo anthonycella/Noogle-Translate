@@ -8,7 +8,7 @@ import LoginText from './logintext';
 function LoginButton() {
   const { loginWithRedirect } = useAuth0();
   return (
-    <LoginButtonComponent onClick={() => loginWithRedirect()}>
+    <LoginButtonComponent onClick={() => loginWithRedirect()} className="ignore">
       Login
     </LoginButtonComponent>
   );

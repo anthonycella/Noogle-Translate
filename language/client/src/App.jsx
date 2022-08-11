@@ -1,15 +1,22 @@
 import React from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
+import { useAuth0 } from '@auth0/auth0-react';
 
 import Title from './components/title/title';
 import Main from './components/main/main';
 import LoginButton from './login/loginbutton';
+import Profile from './login/profile';
 import Trie from './trie';
 
 function App() {
   const [[data, trie], setData] = React.useState([{}, null]);
   const [searchBarVisibility, setSearchBarVisibility] = React.useState(false);
+
+  const { isAuthenticated } = useAuth0();
+
+  console.log(isAuthenticated);
+  const profileElement = isAuthenticated ? <Profile /> : <LoginButton />;
 
   if (Object.keys(data).length === 0) {
     const prefixTrie = new Trie('root');
@@ -60,6 +67,11 @@ function App() {
     console.log(event.target.className);
 
     let identifier = event.target.className;
+
+    if (identifier.includes('ignore')) {
+      return;
+    }
+
     let isSearchBarElement = typeof identifier === 'string' && identifier.includes('search-bar');
     if (!isSearchBarElement) {
       identifier = event.target.closest('div').className;
@@ -83,7 +95,7 @@ function App() {
         setSearchBarVisibility={setSearchBarVisibility}
         trie={trie}
       />
-      <LoginButton />
+      {profileElement}
     </AppComponent>
   );
 }
