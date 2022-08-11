@@ -8,13 +8,13 @@ function getColor(index) {
   return colors[index % colors.length];
 }
 
-function SearchResults({ results }) {
+function SearchResults({ results, setTopic }) {
   let index = -1;
   const searchResults = results.map((result) => {
     index += 1;
     const hoverColor = getColor(index);
 
-    return <SearchResult key={index} result={result} hoverColor={hoverColor} />;
+    return <SearchResult key={index} result={result} hoverColor={hoverColor} setTopic={setTopic} />;
   });
   return (
     <SearchResultsComponent className="search-bar">

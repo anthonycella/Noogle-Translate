@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
-function SearchResult({ result, hoverColor }) {
+function SearchResult({ result, hoverColor, setTopic }) {
   return (
-    <SearchResultComponent className="search-bar" hoverColor={hoverColor}>
+    <SearchResultComponent className="search-bar" hoverColor={hoverColor} onClick={() => setTopic([result, true])}>
       {result}
     </SearchResultComponent>
   );

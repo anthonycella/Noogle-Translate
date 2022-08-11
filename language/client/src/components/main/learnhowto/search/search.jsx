@@ -9,11 +9,11 @@ function getSearchResults(searchEntry, trie) {
   return results;
 }
 
-function Search({ trie }) {
+function Search({ trie, setTopic }) {
   const [searchEntry, setSearchEntry] = useState('');
 
   const results = getSearchResults(searchEntry, trie);
-  const resultsComponent = searchEntry === '' ? <div /> : <SearchResults results={results} />;
+  const resultsComponent = searchEntry === '' ? <div /> : <SearchResults results={results} setTopic={setTopic} />;
 
   return (
     <SearchComponent>
