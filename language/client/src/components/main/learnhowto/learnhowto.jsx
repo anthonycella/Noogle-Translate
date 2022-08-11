@@ -5,8 +5,13 @@ import SelectTopic from './selecttopic';
 import AutoTypeIntro from './autotypeintro';
 
 function LearnHowTo({
-  setTopic, topics, topic,
+  setTopic, topics, topic, searchBarVisibility, setSearchBarVisibility,
 }) {
+  if (searchBarVisibility) {
+    return (
+      <SearchBar />
+    );
+  }
   if (topic === 'Select a topic to begin') {
     return (
       <LearnHowToComponent>

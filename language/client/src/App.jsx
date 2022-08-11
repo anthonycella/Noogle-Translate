@@ -58,7 +58,11 @@ function App() {
   return (
     <AppComponent className="App" onClick={(event) => turnOffSearchBarVisibility(event)}>
       <Title />
-      <Main data={data} searchBarVisibility={searchBarVisibility} />
+      <Main
+        data={data}
+        searchBarVisibility={searchBarVisibility}
+        setSearchBarVisibility={setSearchBarVisibility}
+      />
     </AppComponent>
   );
 }

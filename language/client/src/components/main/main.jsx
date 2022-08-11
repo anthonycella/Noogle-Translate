@@ -6,13 +6,13 @@ import LearnHowTo from './learnhowto/learnhowto';
 import Contribute from './contribute/contribute';
 import ContributionButton from './contribute/contributionbutton';
 
-function Main({ data }) {
+function Main({ data, searchBarVisibility, setSearchBarVisibility }) {
   const topics = Object.keys(data) || ['Say I am Batman'];
 
   const [topic, setTopic] = useState('Select a topic to begin');
 
   const [modalVisibility, setModalVisibility] = useState('hidden');
-  const [searchVisibility, setSearchVisibility] = useState('hidden');
+  // const [dropdownVisibility, setDropdownVisibility] = useState('hidden');
 
   const languageData = data[topic] || {};
 
@@ -22,8 +22,8 @@ function Main({ data }) {
         setTopic={setTopic}
         topics={topics}
         topic={topic}
-        searchVisibility={searchVisibility}
-        setSearchVisibility={setSearchVisibility}
+        searchBarVisibility={searchBarVisibility}
+        setSearchBarVisibility={setSearchBarVisibility}
       />
       <Languages
         languageData={languageData}
