@@ -28,6 +28,7 @@ const PythonTabComponent = styled.div`
   &:hover {
     cursor: pointer;
     color: ${(props) => props.hoverColor};
+    transition: color 0.2s ease-in-out;
   }
   display: flex;
   justify-content: center;

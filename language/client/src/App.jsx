@@ -4,6 +4,7 @@ import axios from 'axios';
 
 import Title from './components/title/title';
 import Main from './components/main/main';
+import LoginButton from './login/loginbutton';
 import Trie from './trie';
 
 function App() {
@@ -82,6 +83,7 @@ function App() {
         setSearchBarVisibility={setSearchBarVisibility}
         trie={trie}
       />
+      <LoginButton />
     </AppComponent>
   );
 }

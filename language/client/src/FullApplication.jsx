@@ -5,7 +5,7 @@ import App from './App';
 function FullApplication() {
   return (
     <Auth0Provider
-      domain="dev-0-9.us.auth0.com"
+      domain="dev-1lc62j8z.us.auth0.com"
       clientId="4tOahnzzbHobZdEOYMdw66r1KvF9fQOc"
       redirectUri={window.location.origin}
     >
