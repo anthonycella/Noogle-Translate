@@ -14,7 +14,7 @@ function LearnHowTo({
       <LearnHowToComponent>
         Learn how to
         &nbsp;
-        <Search trie={trie} setTopic={setTopic} />
+        <Search trie={trie} setTopic={setTopic} topics={topics} />
         &nbsp;
         in...
       </LearnHowToComponent>

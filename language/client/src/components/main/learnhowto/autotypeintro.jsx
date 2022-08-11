@@ -63,7 +63,7 @@ function autoType(text, index, topic, topics, direction, setText, interval) {
 }
 
 function AutoTypeIntro({ topics, onClick }) {
-  const [[text, index, topic, direction, interval], setText] = useState(['', 0, topics[0], 'forward', 75]);
+  const [[text, index, topic, direction, interval], setText] = useState(['', 0, topics[0], 'forward', 1500]);
   autoType(text, index, topic, topics, direction, setText, interval);
   return (
     <OverallComponent onClick={onClick} className="search-bar">

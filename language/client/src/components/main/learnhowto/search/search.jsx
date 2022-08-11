@@ -9,16 +9,15 @@ function getSearchResults(searchEntry, trie) {
   return results;
 }
 
-function Search({ trie, setTopic }) {
+function Search({ trie, setTopic, topics }) {
   const [searchEntry, setSearchEntry] = useState('');
 
-  const results = getSearchResults(searchEntry, trie);
-  const resultsComponent = searchEntry === '' ? <div /> : <SearchResults results={results} setTopic={setTopic} />;
+  const results = searchEntry === '' ? [] : getSearchResults(searchEntry, trie);
 
   return (
     <SearchComponent>
       <SearchBar onChange={(event) => setSearchEntry(event.target.value)} />
-      {resultsComponent}
+      <SearchResults results={results} setTopic={setTopic} />
     </SearchComponent>
   );
 }

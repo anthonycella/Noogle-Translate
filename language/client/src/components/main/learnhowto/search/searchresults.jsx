@@ -10,6 +10,11 @@ function getColor(index) {
 
 function SearchResults({ results, setTopic }) {
   let index = -1;
+
+  if (results.length === 0) {
+    return null;
+  }
+
   const searchResults = results.map((result) => {
     index += 1;
     const hoverColor = getColor(index);
