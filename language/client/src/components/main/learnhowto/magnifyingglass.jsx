@@ -1,16 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
-import { CgMagnet } from 'react-icons/cg';
+import { GiMagnifyingGlass } from 'react-icons/gi';
 
-function Magnet({ onClick }) {
+function MagnifyingGlass({ onClick }) {
   return (
-    <MagnetComponent className="search-bar">
-      <CgMagnet class="search-bar" />
-    </MagnetComponent>
+    <MagnifyingGlassComponent className="search-bar">
+      <GiMagnifyingGlass class="search-bar" />
+    </MagnifyingGlassComponent>
   );
 }
 
-const MagnetComponent = styled.div`
+const MagnifyingGlassComponent = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -28,4 +28,4 @@ const MagnetComponent = styled.div`
   }
 `;
 
-export default Magnet;
+export default MagnifyingGlass;

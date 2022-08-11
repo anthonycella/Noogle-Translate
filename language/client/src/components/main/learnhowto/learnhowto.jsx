@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import SelectTopic from './selecttopic';
 import AutoTypeIntro from './autotypeintro';
-import Magnet from './magnet';
+import MagnifyingGlass from './magnifyingglass';
 import Search from './search/search';
 
 function LearnHowTo({
@@ -37,7 +37,7 @@ function LearnHowTo({
       &nbsp;
       <SelectTopic setTopic={setTopic} topics={topics} selectedTopic={topic} />
       &nbsp;
-      <Magnet />
+      <MagnifyingGlass />
       &nbsp;
       in...
     </LearnHowToComponent>
