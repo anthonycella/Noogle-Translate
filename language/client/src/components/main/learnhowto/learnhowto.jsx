@@ -30,6 +30,7 @@ function LearnHowTo({
       Learn how to
       &nbsp;
       <SelectTopic setTopic={setTopic} topics={topics} selectedTopic={topic} />
+      &nbsp;
       <MagnifyingGlass />
       &nbsp;
       in...

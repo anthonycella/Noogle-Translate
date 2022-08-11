@@ -22,8 +22,13 @@ function SelectTopic({ setTopic, topics, selectedTopic }) {
 }
 
 const SelectTopicComponent = styled.select`
+  &:hover {
+    color: #4885ed;
+    cursor: pointer;
+  }
   text-align: center;
-  width: 250px;
+  width: 265px;
+  height: 36px;
   font-size: 24px;
   background-color: #CCC;
   border: 1px solid #CCC;

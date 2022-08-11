@@ -14,7 +14,6 @@ const MagnifyingGlassComponent = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 5px;
   width: 25px;
   height: 25px;
   font-size: 22px;
@@ -25,6 +24,7 @@ const MagnifyingGlassComponent = styled.div`
   &:hover {
     color: #4885ed;
     border: 1px solid #4885ed;
+    cursor: pointer;
   }
 `;
 
