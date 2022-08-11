@@ -1,16 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
 
-function SearchBar() {
+function SearchBar({ onChange }) {
   return (
-    <SearchBarComponent type="text" className="search-bar" />
+    <SearchBarComponent type="text" className="search-bar" onChange={onChange} />
   );
 }
 
 const SearchBarComponent = styled.input`
-  width: 300px;
-  height: 40px;
-  font-size: 32px;
+  width: 295px;
+  height: 32px;
+  font-size: 24px;
+  border-radius: 5px;
 `;
 
 export default SearchBar;

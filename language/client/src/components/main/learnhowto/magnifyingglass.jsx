@@ -4,8 +4,8 @@ import { GiMagnifyingGlass } from 'react-icons/gi';
 
 function MagnifyingGlass({ onClick }) {
   return (
-    <MagnifyingGlassComponent className="search-bar">
-      <GiMagnifyingGlass class="search-bar" />
+    <MagnifyingGlassComponent onClick={onClick} className="search-bar">
+      <GiMagnifyingGlass className="search-bar" />
     </MagnifyingGlassComponent>
   );
 }
@@ -22,8 +22,8 @@ const MagnifyingGlassComponent = styled.div`
   border-radius: 5px;
   color: #333;
   &:hover {
-    color: #4885ed;
-    border: 1px solid #4885ed;
+    color: #3cba54;
+    border: 1px solid #3cba54;
     cursor: pointer;
   }
 `;

@@ -39,6 +39,7 @@ const CodeBoxComponent = styled.div`
   min-height: 750px;
   width: 750px;
   background-color: ${(props) => props.color};
+  border-radius: 0px 5px 5px 5px;
 `;
 
 export default CodeBox;

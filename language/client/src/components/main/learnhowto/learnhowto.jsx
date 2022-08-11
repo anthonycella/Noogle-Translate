@@ -3,8 +3,8 @@ import styled from 'styled-components';
 
 import SelectTopic from './selecttopic';
 import AutoTypeIntro from './autotypeintro';
-import MagnifyingGlass from './magnifyingglass';
-import SearchBar from './searchbar';
+import Magnet from './magnet';
+import Search from './search';
 
 function LearnHowTo({
   setTopic, topics, topic, searchBarVisibility, setSearchBarVisibility,
@@ -14,7 +14,7 @@ function LearnHowTo({
       <LearnHowToComponent>
         Learn how to
         &nbsp;
-        <SearchBar />
+        <Search />
         &nbsp;
         in...
       </LearnHowToComponent>
@@ -37,7 +37,7 @@ function LearnHowTo({
       &nbsp;
       <SelectTopic setTopic={setTopic} topics={topics} selectedTopic={topic} />
       &nbsp;
-      <MagnifyingGlass />
+      <Magnet />
       &nbsp;
       in...
     </LearnHowToComponent>
