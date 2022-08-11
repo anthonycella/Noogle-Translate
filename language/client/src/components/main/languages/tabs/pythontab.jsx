@@ -2,11 +2,21 @@ import React from 'react';
 import styled from 'styled-components';
 
 function PythonTab({ selectedLanguage, setLanguageToPython }) {
-  const color = selectedLanguage === 'python' ? '#fff' : '#3cba54';
+  let color;
+  let hoverColor;
+
+  if (selectedLanguage === 'python') {
+    color = '#fff';
+    hoverColor = '#3cba54';
+  } else {
+    color = '#3cba54';
+    hoverColor = '#fff';
+  }
 
   return (
     <PythonTabComponent
       background={color}
+      hoverColor={hoverColor}
       onClick={setLanguageToPython}
     >
       Python
@@ -15,6 +25,10 @@ function PythonTab({ selectedLanguage, setLanguageToPython }) {
 }
 
 const PythonTabComponent = styled.div`
+  &:hover {
+    cursor: pointer;
+    color: ${(props) => props.hoverColor};
+  }
   display: flex;
   justify-content: center;
   align-items: center;

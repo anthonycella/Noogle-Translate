@@ -15,6 +15,10 @@ function JavascriptTab({ selectedLanguage, setLanguageToJavascript }) {
 }
 
 const JavascriptTabComponent = styled.div`
+  &:hover {
+    cursor: pointer;
+    color: white;
+  }
   display: flex;
   justify-content: center;
   align-items: center;

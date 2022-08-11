@@ -15,6 +15,10 @@ function TypescriptTab({ selectedLanguage, setLanguageToTypescript }) {
 }
 
 const TypescriptTabComponent = styled.div`
+  &:hover {
+    cursor: pointer;
+    color: white;
+  }
   display: flex;
   justify-content: center;
   align-items: center;

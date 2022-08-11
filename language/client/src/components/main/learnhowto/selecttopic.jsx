@@ -23,7 +23,7 @@ function SelectTopic({ setTopic, topics, selectedTopic }) {
 
 const SelectTopicComponent = styled.select`
   text-align: center;
-  width: 300px;
+  width: 250px;
   font-size: 24px;
   background-color: #CCC;
   border: 1px solid #CCC;

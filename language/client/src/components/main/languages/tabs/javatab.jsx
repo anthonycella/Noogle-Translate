@@ -15,6 +15,10 @@ function JavaTab({ selectedLanguage, setLanguageToJava }) {
 }
 
 const JavaTabComponent = styled.div`
+  &:hover {
+    cursor: pointer;
+    color: white;
+  }
   display: flex;
   justify-content: center;
   align-items: center;

@@ -3,6 +3,8 @@ import styled from 'styled-components';
 
 import SelectTopic from './selecttopic';
 import AutoTypeIntro from './autotypeintro';
+import MagnifyingGlass from './magnifyingglass';
+import SearchBar from './searchbar';
 
 function LearnHowTo({
   setTopic, topics, topic, searchBarVisibility, setSearchBarVisibility,
@@ -28,6 +30,7 @@ function LearnHowTo({
       Learn how to
       &nbsp;
       <SelectTopic setTopic={setTopic} topics={topics} selectedTopic={topic} />
+      <MagnifyingGlass />
       &nbsp;
       in...
     </LearnHowToComponent>
@@ -38,6 +41,7 @@ const LearnHowToComponent = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-items: center;
   text-align: center;
   font-size: 36px;
   margin: 15px;

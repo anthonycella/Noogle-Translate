@@ -15,6 +15,10 @@ function CPlusPlusTab({ selectedLanguage, setLanguageToCPlusPlus }) {
 }
 
 const CPlusPlusTabComponent = styled.div`
+  &:hover {
+    cursor: pointer;
+    color: white;
+  }
   display: flex;
   justify-content: center;
   align-items: center;
