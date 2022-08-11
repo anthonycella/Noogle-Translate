@@ -1,9 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
+import { GiMagnifyingGlass } from 'react-icons/gi';
 
 function MagnifyingGlass() {
   return (
-    <MagnifyingGlassComponent type="text" />
+    <MagnifyingGlassComponent>
+      <GiMagnifyingGlass />
+    </MagnifyingGlassComponent>
   );
 }
 
