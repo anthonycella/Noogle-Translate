@@ -5,7 +5,8 @@ const Trie = function (letter, child = null) {
   this.children = [child];
 };
 
-Trie.prototype.startsWith = function (word = '', prefixAdded = false) {
+Trie.prototype.startsWith = function (word = '', prefix = '') {
+  let noResultsFound = false;
   const hasNoFirstChild = this.children[0] === null;
   const childLetters = hasNoFirstChild ? '' : this.children.map((child) => child.letter.toLowerCase());
 
@@ -24,15 +25,24 @@ Trie.prototype.startsWith = function (word = '', prefixAdded = false) {
   const hasNextLetterInChildren = locationOfNextLetterInChildren !== -1;
 
   if (hasNextLetterInChildren) {
+    const nextChild = this.children[locationOfNextLetterInChildren];
+    const nextLetter = nextChild.letter;
+
+    const newPrefix = word;
+
     if (word.length === 1) {
       return this.children[locationOfNextLetterInChildren].getChildWords();
     }
 
-    const prefix = !prefixAdded ? word.slice(0, word.length - 1) : '';
+    const results = nextChild.startsWith(word.slice(1), newPrefix)
+      .map((childWord) => {
+        if (childWord === 'No results found') {
+          noResultsFound = true;
+        }
 
-    const results = this.children[locationOfNextLetterInChildren].startsWith(word.slice(1), true)
-      .map((childWord) => prefix + childWord);
-    return results;
+        return newPrefix + childWord;
+      });
+    return noResultsFound ? ['No results found'] : results;
   }
 
   return ['No results found'];
@@ -50,7 +60,7 @@ Trie.prototype.getChildWords = function () {
     }
 
     const currentChildWords = currentChild.getChildWords()
-      .map((childWord) => prefix + childWord);
+      .map((childWord) => childWord);
 
     childWords.push(currentChildWords);
   }
