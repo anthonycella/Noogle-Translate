@@ -7,8 +7,20 @@ const Trie = function (letter, child = null) {
 
 Trie.prototype.startsWith = function (word = '', prefixAdded = false) {
   const hasNoFirstChild = this.children[0] === null;
-  const childLetters = hasNoFirstChild ? '' : this.children.map((child) => child.letter);
-  const locationOfNextLetterInChildren = childLetters.indexOf(word[0]);
+  const childLetters = hasNoFirstChild ? '' : this.children.map((child) => child.letter.toLowerCase());
+
+  let locationOfNextLetterInChildren = -1;
+
+  if (word.length > 0) {
+    const nextLetter = word[0];
+    console.log(typeof nextLetter);
+    for (let currentIndex = 0; currentIndex < childLetters.length; currentIndex += 1) {
+      if (nextLetter.toUpperCase() === childLetters[currentIndex].toUpperCase()) {
+        locationOfNextLetterInChildren = currentIndex;
+      }
+    }
+  }
+
   const hasNextLetterInChildren = locationOfNextLetterInChildren !== -1;
 
   if (hasNextLetterInChildren) {
@@ -30,7 +42,7 @@ Trie.prototype.getChildWords = function () {
   const prefix = this.letter;
   let childWords = [];
 
-  for (let currentIndex = 0; currentIndex < this.children.length; currentIndex++) {
+  for (let currentIndex = 0; currentIndex < this.children.length; currentIndex += 1) {
     const currentChild = this.children[currentIndex];
 
     if (currentChild === null) {

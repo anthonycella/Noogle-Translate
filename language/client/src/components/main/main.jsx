@@ -6,7 +6,7 @@ import LearnHowTo from './learnhowto/learnhowto';
 import Contribute from './contribute/contribute';
 import ContributionButton from './contribute/contributionbutton';
 
-function Main({ data, searchBarVisibility, setSearchBarVisibility }) {
+function Main({ data, searchBarVisibility, setSearchBarVisibility, trie }) {
   const topics = Object.keys(data) || ['Say I am Batman'];
 
   const [topic, setTopic] = useState('Select a topic to begin');
@@ -24,6 +24,7 @@ function Main({ data, searchBarVisibility, setSearchBarVisibility }) {
         topic={topic}
         searchBarVisibility={searchBarVisibility}
         setSearchBarVisibility={setSearchBarVisibility}
+        trie={trie}
       />
       <Languages
         languageData={languageData}

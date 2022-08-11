@@ -7,10 +7,6 @@ import Main from './components/main/main';
 import Trie from './trie';
 
 function App() {
-  const prefixTrie = new Trie('root');
-  prefixTrie.insertChild('apple');
-  prefixTrie.insertChild('app in store');
-
   const [[data, trie], setData] = React.useState([{}, null]);
   const [searchBarVisibility, setSearchBarVisibility] = React.useState(false);
 
@@ -84,6 +80,7 @@ function App() {
         data={data}
         searchBarVisibility={searchBarVisibility}
         setSearchBarVisibility={setSearchBarVisibility}
+        trie={trie}
       />
     </AppComponent>
   );

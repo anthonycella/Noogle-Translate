@@ -7,14 +7,14 @@ import Magnet from './magnet';
 import Search from './search';
 
 function LearnHowTo({
-  setTopic, topics, topic, searchBarVisibility,
+  setTopic, topics, topic, searchBarVisibility, trie,
 }) {
   if (searchBarVisibility) {
     return (
       <LearnHowToComponent>
         Learn how to
         &nbsp;
-        <Search />
+        <Search trie={trie} />
         &nbsp;
         in...
       </LearnHowToComponent>
