@@ -7,7 +7,7 @@ import Magnet from './magnet';
 import Search from './search';
 
 function LearnHowTo({
-  setTopic, topics, topic, searchBarVisibility, setSearchBarVisibility,
+  setTopic, topics, topic, searchBarVisibility,
 }) {
   if (searchBarVisibility) {
     return (

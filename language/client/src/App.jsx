@@ -10,27 +10,31 @@ function App() {
   const prefixTrie = new Trie('root');
   prefixTrie.insertChild('apple');
   prefixTrie.insertChild('app in store');
-  const printable = prefixTrie.startsWith('app');
-  console.log('Trie is', printable);
 
-  const [data, setData] = React.useState({});
+  const [[data, trie], setData] = React.useState([{}, null]);
   const [searchBarVisibility, setSearchBarVisibility] = React.useState(false);
 
   if (Object.keys(data).length === 0) {
+    const prefixTrie = new Trie('root');
+
     axios.get('/topics')
       .then((response) => {
         const responseTopics = response.data;
         // console.log(responseTopics);
-        const results = responseTopics.map((topic) => axios({
-          method: 'get',
-          url: '/contributions',
-          params: {
-            topic,
-          },
-        }));
+        const results = responseTopics.map((topic) => {
+          prefixTrie.insertChild(topic);
+          return axios({
+            method: 'get',
+            url: '/contributions',
+            params: {
+              topic,
+            },
+          });
+        });
 
         Promise.all(results)
           .then((topicsFromDatabase) => {
+            // console.log(prefixTrie);
             const newTopics = {};
             topicsFromDatabase.map((entry) => {
               const topic = entry.data;
@@ -43,7 +47,7 @@ function App() {
 
               return true;
             });
-            setData(newTopics);
+            setData([newTopics, prefixTrie]);
           })
           .catch((error) => {
             console.log(error);
