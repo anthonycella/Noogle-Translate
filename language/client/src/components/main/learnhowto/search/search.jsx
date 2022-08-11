@@ -2,17 +2,16 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 
 import SearchBar from './searchbar';
-import MagnifyingGlass from './magnifyingglass';
 
 function getSearchResults(searchEntry, trie) {
   const results = trie.startsWith(searchEntry);
-  console.log(results);
+  return results;
 }
 
 function Search({ trie }) {
   const [searchEntry, setSearchEntry] = useState('');
 
-  getSearchResults(searchEntry, trie);
+  const searchResults = getSearchResults(searchEntry, trie);
   return (
     <SearchBar onChange={(event) => setSearchEntry(event.target.value)} />
   );

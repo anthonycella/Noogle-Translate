@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import SelectTopic from './selecttopic';
 import AutoTypeIntro from './autotypeintro';
 import Magnet from './magnet';
-import Search from './search';
+import Search from './search/search';
 
 function LearnHowTo({
   setTopic, topics, topic, searchBarVisibility, trie,
