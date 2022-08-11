@@ -45,8 +45,9 @@ Trie.prototype.getChildWords = function () {
 Trie.prototype.insertChild = function (word) {
   const newChild = new Trie(word[0], null);
 
-  const hasNoFirstChild = !this.children[0];
-  const locationOfNextLetterInChildren = this.children.indexOf(word[0]);
+  const hasNoFirstChild = this.children[0] === null;
+  const childLetters = hasNoFirstChild ? '' : this.children.map((child) => child.letter);
+  const locationOfNextLetterInChildren = childLetters.indexOf(word[0]);
   const hasNextLetterInChildren = locationOfNextLetterInChildren !== -1;
 
   if (hasNoFirstChild) {
