@@ -31,7 +31,7 @@ function ExampleCode({ textContent, selectedLanguage, topic }) {
   }
 
   if (topic === 'Select a topic to begin') {
-    displayedText = topic;
+    displayedText = 'Select a topic by clicking on the autotying text';
   }
 
   return (
