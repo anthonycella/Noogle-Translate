@@ -18,10 +18,11 @@ const JavaTabComponent = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 44px;
+  height: 47px;
   width: 100px;
   background-color: ${(props) => props.background};
   border: 3px solid #db3236;
+  border-bottom: 0px;
   border-radius: 5px 5px 0px 0px;
 `;
 

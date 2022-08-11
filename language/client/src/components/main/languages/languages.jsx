@@ -37,6 +37,12 @@ function Languages({ topic, languageData }) {
   const languages = getLanguages(languageData);
   const [selectedLanguage, setSelectedLanguage] = useState('');
 
+  const needsDefaultLanguage = selectedLanguage === '' && topic !== 'Select a topic to begin';
+
+  if (needsDefaultLanguage && languages.length !== 0) {
+    setSelectedLanguage(languages[0]);
+  }
+
   const textContent = languageData[selectedLanguage] || 'Select a language to begin';
   return (
     <LanguagesComponent>
