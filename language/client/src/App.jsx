@@ -4,8 +4,15 @@ import axios from 'axios';
 
 import Title from './components/title/title';
 import Main from './components/main/main';
+import Trie from './trie';
 
 function App() {
+  const prefixTrie = new Trie('root');
+  prefixTrie.insertChild('apple');
+  prefixTrie.insertChild('app in store');
+  const printable = prefixTrie.children;
+  console.log('Trie is', prefixTrie);
+
   const [data, setData] = React.useState({});
   const [searchBarVisibility, setSearchBarVisibility] = React.useState(false);
 
@@ -13,7 +20,7 @@ function App() {
     axios.get('/topics')
       .then((response) => {
         const responseTopics = response.data;
-        console.log(responseTopics);
+        // console.log(responseTopics);
         const results = responseTopics.map((topic) => axios({
           method: 'get',
           url: '/contributions',
@@ -49,7 +56,7 @@ function App() {
   }
 
   function turnOffSearchBarVisibility(event) {
-    console.log(event.target.closest('div').className);
+    // console.log(event.target.closest('div').className);
 
     let identifier = event.target.className;
     let isSearchBarElement = typeof identifier === 'string' && identifier.includes('search-bar');
@@ -58,10 +65,10 @@ function App() {
       isSearchBarElement = identifier.includes('search-bar');
     }
     if (isSearchBarElement) {
-      console.log('turning on search bar visibility');
+      // console.log('turning on search bar visibility');
       setSearchBarVisibility(true);
     } else {
-      console.log('turning off search bar visibility');
+      // console.log('turning off search bar visibility');
       setSearchBarVisibility(false);
     }
   }

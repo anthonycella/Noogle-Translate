@@ -1,11 +1,11 @@
-class Trie {
-  constructor(letter, child = null) {
-    this.letter = letter;
-    this.children = [child];
-  }
-}
+/* eslint-disable func-names */
+// eslint-disable-next-line func-names
+const Trie = function (letter, child = null) {
+  this.letter = letter;
+  this.children = [child];
+};
 
-Trie.prototype.startsWith = (word = '') => {
+Trie.prototype.startsWith = function (word = '') {
   if (word[0] !== this.letter) {
     return ['No results found'];
   }
@@ -24,7 +24,7 @@ Trie.prototype.startsWith = (word = '') => {
   return ['No results found'];
 };
 
-Trie.prototype.getChildWords = () => {
+Trie.prototype.getChildWords = function () {
   let childWords = [];
   const prefix = this.letter;
 
@@ -42,7 +42,7 @@ Trie.prototype.getChildWords = () => {
   return childWords;
 };
 
-Trie.prototype.insertChild = (word) => {
+Trie.prototype.insertChild = function (word) {
   const newChild = new Trie(word[0], null);
 
   const hasNoFirstChild = !this.children[0];
@@ -69,7 +69,7 @@ Trie.prototype.insertChild = (word) => {
   }
 };
 
-Trie.prototype.printable = () => {
+Trie.prototype.printable = function () {
   let string = `${this.letter}[\n`;
 
   this.children.map((child) => {

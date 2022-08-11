@@ -12,7 +12,7 @@ function Tabs({ selectedLanguage, setSelectedLanguage, languages }) {
   });
 
   if (tabs.length === 0) {
-    const languagesTab = [<LanguagesTab />];
+    const languagesTab = [<LanguagesTab key={99} />];
     const listOfLanguages = [
       'javascript',
       'typescript',
