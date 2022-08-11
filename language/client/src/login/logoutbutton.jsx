@@ -16,10 +16,10 @@ const LoginButtonComponent = styled.div`
   &:hover {
     cursor: pointer;
     background-color: white;
-    border-radius: 5px;
+    border-radius: 10px;
     color: #db3236;
     border: 1px solid #db3236;
-    transition: all 0.1s ease-in-out;
+    transition: all 0.2s ease-in-out;
   }
   padding: 3px;
   display: flex;
