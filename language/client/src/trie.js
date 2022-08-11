@@ -5,6 +5,25 @@ class Trie {
   }
 }
 
+Trie.prototype.startsWith = (word = '') => {
+  if (word[0] !== this.letter) {
+    return ['No results found'];
+  }
+
+  if (word.length === 1) {
+    return this.getChildWords();
+  }
+
+  const locationOfNextLetterInChildren = this.children.indexOf(word[1]);
+  const hasNextLetterInChildren = locationOfNextLetterInChildren !== -1;
+
+  if (hasNextLetterInChildren) {
+    return this.children[locationOfNextLetterInChildren].startsWith(word.slice(1));
+  }
+
+  return ['No results found'];
+};
+
 Trie.prototype.getChildWords = () => {
   let childWords = [];
   const prefix = this.letter;
@@ -48,6 +67,19 @@ Trie.prototype.insertChild = (word) => {
 
     this.children.push(newChild);
   }
+};
+
+Trie.prototype.printable = () => {
+  let string = `${this.letter}[\n`;
+
+  this.children.map((child) => {
+    string += `${child.printable()}\n`;
+    return true;
+  });
+
+  string += ']';
+
+  return string;
 };
 
 module.exports = Trie;
