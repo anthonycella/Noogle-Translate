@@ -8,7 +8,7 @@ function SearchBar({ onChange }) {
 }
 
 const SearchBarComponent = styled.input`
-  width: 295px;
+  width: 293px;
   height: 32px;
   font-size: 24px;
   border-radius: 5px;

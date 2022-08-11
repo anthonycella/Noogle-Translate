@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 
 import SearchBar from './searchbar';
+import SearchResults from './searchresults';
 
 function getSearchResults(searchEntry, trie) {
   const results = trie.startsWith(searchEntry);
@@ -11,17 +12,22 @@ function getSearchResults(searchEntry, trie) {
 function Search({ trie }) {
   const [searchEntry, setSearchEntry] = useState('');
 
-  const searchResults = getSearchResults(searchEntry, trie);
+  const results = getSearchResults(searchEntry, trie);
+  const resultsComponent = searchEntry === '' ? <div /> : <SearchResults results={results} />;
+
   return (
-    <SearchBar onChange={(event) => setSearchEntry(event.target.value)} />
+    <SearchComponent>
+      <SearchBar onChange={(event) => setSearchEntry(event.target.value)} />
+      {resultsComponent}
+    </SearchComponent>
   );
-  // return (
-  //   <>
-  //     <SearchBar onChange={(event) => setSearchEntry(event.target.value)} />
-  //     &nbsp;
-  //     <MagnifyingGlass onClick={() => submitSearchEntry(searchEntry, setSearchEntry)} />
-  //   </>
-  // );
 }
+
+const SearchComponent = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0px 0px 5px 5px;
+`;
 
 export default Search;
