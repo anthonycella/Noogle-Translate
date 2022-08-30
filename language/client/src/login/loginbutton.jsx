@@ -18,10 +18,10 @@ const LoginButtonComponent = styled.div`
   &:hover {
     cursor: pointer;
     background-color: white;
-    border-radius: 5px;
+    border-radius: 10px;
     color: #3cba54;
     border: 1px solid #3cba54;
-    transition: all 0.1s ease-in-out;
+    transition: all 0.2s ease-in-out;
   }
   display: flex;
   justify-content: center;

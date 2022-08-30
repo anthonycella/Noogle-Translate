@@ -17,7 +17,6 @@ function App() {
   const [searchBarVisibility, setSearchBarVisibility] = React.useState(false);
 
   const { isAuthenticated } = useAuth0();
-  // console.log("🚀 ~ file: App.jsx ~ line 20 ~ App ~ isAuthenticated", isAuthenticated);
 
   let profileElement = null;
 
