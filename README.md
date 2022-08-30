@@ -17,7 +17,7 @@ npm install
 ```
 npm start
 ```
-4. Navigate to http://localhost:3000/ or just click [here](http://localhost:3000)
+4. Navigate to http://localhost:3000 or just click [here](http://localhost:3000)
 
 ## Known Issues
 - typing carousel can be glitchy upon first load. This is because the operations are having trouble running at the same time as the login functionality is loading.
